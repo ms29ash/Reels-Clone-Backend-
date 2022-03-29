@@ -1,4 +1,5 @@
 import express from "express";
+import Cors from 'cors';
 import connectToMongo from "./db.js";
 import Reel from './models/Reel.js';
 import reelRouter from './routes/reels.js'
@@ -10,6 +11,7 @@ const port = process.env.PORT || 9000;
 
 // Middlewares
 app.use(express.json());
+app.use(Cors());
 
 // Connecst to db
 connectToMongo();
